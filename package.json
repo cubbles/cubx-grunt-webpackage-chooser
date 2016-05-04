@@ -1,0 +1,28 @@
+{
+    "name": "cubx-grunt-webpackage-chooser",
+    "description": "Grunt plugin for change the activeWebpackage",
+    "version": "0.1.0",
+    "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cubbles/cubx-grunt-webpackage-chooser.git"
+    },
+    "author": "Judit Ross <judit.ross@incowia.com>",
+    "licenses":  "MIT",
+    "description": "",
+    "peerDependencies": {
+        "grunt": "~0.4.5"
+    },
+    "devDependencies:": {
+        "grunt": "~0.4.5"
+    },
+    "dependencies": {
+        "inquirer": "^0.8.5"
+    },
+    "keywords": [
+        "gruntplugin",
+        "cubbles",
+        "webpackage"
+    ]
+}
