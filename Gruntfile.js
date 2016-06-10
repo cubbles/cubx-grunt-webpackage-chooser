@@ -8,31 +8,29 @@
 
 'use strict';
 
-module.exports = function(grunt) {
-    // Project configuration.
-    var workspacePath = 'test/webpackages/';
-    var workspaceConfigPath = workspacePath + '.workspace';
-    var activeWebpackage;
-    try {
-        activeWebpackage = grunt.file.readJSON(workspaceConfigPath).activeWebpackage;
-    } catch(err){
+module.exports = function (grunt) {
+  // Project configuration.
+  var workspacePath = 'test/webpackages/';
+  var workspaceConfigPath = workspacePath + '.workspace';
+  var activeWebpackage;
+  try {
+    activeWebpackage = grunt.file.readJSON(workspaceConfigPath).activeWebpackage;
+  } catch (err) {
 
-    }
-    var manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
+  }
+  var manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
 
-    grunt.initConfig({
+  grunt.initConfig({
 
-        // the option used within the devtools to load the workspace-config
-        workspacePath: workspacePath,
-        workspaceConfigPath: workspaceConfigPath,
-        activeWebpackage: activeWebpackage,
-        manifestWebpackagePath: manifestWebpackagePath
-    });
+    // the option used within the devtools to load the workspace-config
+    workspacePath: workspacePath,
+    workspaceConfigPath: workspaceConfigPath,
+    activeWebpackage: activeWebpackage,
+    manifestWebpackagePath: manifestWebpackagePath
+  });
 
-    // Actually load this plugin's task(s).
-    grunt.loadTasks('tasks');
+  // Actually load this plugin's task(s).
+  grunt.loadTasks('tasks');
 
-    // These plugins provide necessary tasks.
-
-
+  // These plugins provide necessary tasks.
 };
