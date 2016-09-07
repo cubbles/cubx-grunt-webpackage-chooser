@@ -14,7 +14,7 @@ module.exports = function (grunt) {
     } catch (err) {
 
     }
-    if (!configFile || typeof configFile !== 'undefined') {
+    if (!configFile || typeof configFile === 'undefined') {
       configFile = {
         activeWebpackage: ''
       };
