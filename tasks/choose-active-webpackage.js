@@ -22,7 +22,7 @@ module.exports = function (grunt) {
     const done = this.async();
 
     fs.readdir(workspacePath, function (err, files) {
-      let choices = [];
+      const choices = [];
       if (err) {
         grunt.fail.fatal(err);
       }

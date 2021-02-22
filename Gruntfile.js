@@ -18,7 +18,7 @@ module.exports = function (grunt) {
   } catch (err) {
 
   }
-  var manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
+  const manifestWebpackagePath = workspacePath + activeWebpackage + '/manifest.webpackage';
 
   grunt.initConfig({
 
