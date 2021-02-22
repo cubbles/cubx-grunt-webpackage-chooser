@@ -10,9 +10,9 @@
 
 module.exports = function (grunt) {
   // Project configuration.
-  var workspacePath = 'test/webpackages/';
-  var workspaceConfigPath = workspacePath + '.workspace';
-  var activeWebpackage;
+  const workspacePath = 'test/webpackages/';
+  const workspaceConfigPath = workspacePath + '.workspace';
+  let activeWebpackage;
   try {
     activeWebpackage = grunt.file.readJSON(workspaceConfigPath).activeWebpackage;
   } catch (err) {

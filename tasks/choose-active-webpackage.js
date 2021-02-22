@@ -1,14 +1,14 @@
 'use strict';
-var inquirer = require('inquirer');
-var path = require('path');
-var fs = require('fs');
+const inquirer = require('inquirer');
+const path = require('path');
+const fs = require('fs');
 module.exports = function (grunt) {
   grunt.registerTask('_change-activeWebpackage', 'Change the active webpackage.', function () {
-    var workspacePath = grunt.config.get('workspacePath');
-    var activeWebpackage = grunt.config.get('activeWebpackage');
+    const workspacePath = grunt.config.get('workspacePath');
+    const activeWebpackage = grunt.config.get('activeWebpackage');
 
-    var workspaceConfigPath = grunt.config.get('workspaceConfigPath');
-    var configFile;
+    const workspaceConfigPath = grunt.config.get('workspaceConfigPath');
+    let configFile;
     try {
       configFile = grunt.file.readJSON(workspaceConfigPath);
     } catch (err) {
@@ -19,15 +19,15 @@ module.exports = function (grunt) {
         activeWebpackage: ''
       };
     }
-    var done = this.async();
+    const done = this.async();
 
     fs.readdir(workspacePath, function (err, files) {
-      var choices = [];
+      let choices = [];
       if (err) {
         grunt.fail.fatal(err);
       }
       files.forEach(function (file) {
-        var pathName = path.join(workspacePath, file);
+        const pathName = path.join(workspacePath, file);
         if (fs.statSync(pathName).isDirectory()) {
           if (file === activeWebpackage && choices.length > 0) {
             choices.splice(0, 0, file);
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
       });
 
       choices.push('CANCEL');
-      var options = {
+      const options = {
         questions: [
           {
             name: 'selectedWebpackage',
